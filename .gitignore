@@ -1,0 +1,6 @@
+smoke.fa
+smoke.fa.*
+smoke.dict
+*.fastq.gz
+.DS_Store
+results/
