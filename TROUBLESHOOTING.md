@@ -8,4 +8,38 @@
 
 4) I had silly mistakes throughout: for example after -ERVC GVCF and before 2> I put a \ which caused no output
 
+# WEEK 2
 
+1) Memory undersized for BWA-MEM against the full reference
+
+stage_align ran for ~40 minutes and then the job died. BWA-MEM needed ~7.8 GB to load the full
+GRCh38 index, matching the assignment's own stated "~6 GB" figure. Slurm
+killed the job for exceeding its allocation. I increased memory to 8 GB
+
+2) fastp wrote a corrupt .tmp file under a .gz.tmp name
+
+gzip -dc on the trimmed output failed with
+not in gzip format, even though fastp's own log showed a clean,
+successful run with real statistics. changed the resume-safe write pattern to keep .gz as the real
+extension throughout
+
+3) GVCF/VCF output directories never created
+
+Only appeared when running through `run_sample.sh` via the Slurm array —
+not during earlier interactive testing. added `GVCF="${OUT}/GVCF"; VCF="${OUT}/vcf"` and their `mkdir -p`
+calls to `setup_dirs()`
+
+### Breakage 1: TIMEOUT
+**Command:** `sbatch --time=00:02:00 slurm/01_persample.sbatch`
+**Evidence:** [paste sacct showing State: TIMEOUT]
+**What happened:** ...
+
+### Breakage 2: a failed task under afterok
+**Command:** [how you broke one sample] then `bash slurm/submit.sh`
+**Evidence:** [paste sacct showing the cohort job CANCELLED, reason=Dependency]
+**What happened:** ...
+
+### Breakage 3: the out-of-range task
+**Command:** `sbatch --array=1-9 slurm/01_persample.sbatch`
+**What happened:** task 9 correctly exited 64 rather than silently
+processing no rows or the wrong row.
