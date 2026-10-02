@@ -29,17 +29,7 @@ Only appeared when running through `run_sample.sh` via the Slurm array —
 not during earlier interactive testing. added `GVCF="${OUT}/GVCF"; VCF="${OUT}/vcf"` and their `mkdir -p`
 calls to `setup_dirs()`
 
-### Breakage 1: TIMEOUT
-**Command:** `sbatch --time=00:02:00 slurm/01_persample.sbatch`
-**Evidence:** [paste sacct showing State: TIMEOUT]
-**What happened:** ...
-
-### Breakage 2: a failed task under afterok
-**Command:** [how you broke one sample] then `bash slurm/submit.sh`
-**Evidence:** [paste sacct showing the cohort job CANCELLED, reason=Dependency]
-**What happened:** ...
-
-### Breakage 3: the out-of-range task
+### Breakage 1: the out-of-range task
 **Command:** `sbatch --array=1-9 slurm/01_persample.sbatch`
 **What happened:** task 9 correctly exited 64 rather than silently
 processing no rows or the wrong row.
