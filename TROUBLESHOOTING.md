@@ -33,3 +33,13 @@ calls to `setup_dirs()`
 **Command:** `sbatch --array=1-9 slurm/01_persample.sbatch`
 **What happened:** task 9 correctly exited 64 rather than silently
 processing no rows or the wrong row.
+
+# Week 3
+### 1. 02_cohort.sbatch called run_sample.sh instead of run_pipeline.sh
+changed the final line to call run_pipeline.sh with no sample
+argument, matching the original (pre-container) 02_cohort.sbatch.
+
+### 2. THREADS and TMPDIR never reached the pipeline until exported explicitly
+added `export THREADS="${SLURM_CPUS_PER_TASK}"` directly in
+both job scripts, before the pipeline call, alongside the existing
+TMPDIR export and trap.
