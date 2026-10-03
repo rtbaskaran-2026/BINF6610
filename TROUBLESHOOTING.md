@@ -43,3 +43,19 @@ argument, matching the original (pre-container) 02_cohort.sbatch.
 added `export THREADS="${SLURM_CPUS_PER_TASK}"` directly in
 both job scripts, before the pipeline call, alongside the existing
 TMPDIR export and trap.
+
+### Breakage 3: --env THREADS removed, run one sample
+
+By removing this line, THREADS never exported and so the fallback value for THREADS was activated. ALIGN_THREADS was = 4 and SORT_THREADS(2) = 2. Only half of the cores were actually used / four were asked for and we only used two.
+CMD: bwa mem -t 2 -R @RG\tID:NA12878\tSM:NA12878 ... 
+
+### Breakage 2: --bind removed, run one sample
+The job failed almost immediately, no pipeline outputs except some error lines. The exit code was 1 and the path that couldn't be seen was /scratch/baskaran.aa. Removing the --bind line also broke the line
+continuation joining it to the next argument, so apptainer exec
+received zero arguments and printed its own usage error immediately. 
+
+### Breakage 4: apptainer pull --arch arm64 ubuntu:24.04
+the pull succeeded. The run said: 
+FATAL: While checking container encryption: could not open image
+.../arm.sif: the image's architecture (arm64) could not run on the
+host's (amd64)
