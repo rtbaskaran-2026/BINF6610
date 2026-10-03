@@ -1,0 +1,44 @@
+{
+  "pipeline": {
+    "name": "dna-variant-call",
+    "version": "1.0.0",
+    "implementation": "singularity",
+    "git_sha": "384f9c4a0fe962cada7a87787a0a60f52127cc27",
+    "run_id": "2026-10-03T00:39:12Z-384f9c4",
+    "started_at": "2026-10-03T00:39:12Z",
+    "finished_at": "2026-10-03T00:39:12Z",
+    "exit_status": "success"
+  },
+  "platform": {
+    "kind": "singularity-hpc",
+    "region": "chr20:1-10000000",
+    "host": "c3014",
+    "slurm_job_id": "10773449",
+    "slurm_cpus": "4",
+    "container": "/scratch/baskaran.aa/containers/variant-call.sif"
+  },
+  "reference": {"genome": "/courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa"},
+  "samples": [
+    {"sample_id": "NA12878", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "NA12891", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "NA12892", "library_type": "single", "condition": "unaffected"},
+    {"sample_id": "NA07357", "library_type": "paired", "condition": "unaffected"},
+    {"sample_id": "NA12003", "library_type": "single", "condition": "affected"},
+    {"sample_id": "NA10851", "library_type": "paired", "condition": "unaffected"},
+    {"sample_id": "NA12813", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "NA12873", "library_type": "paired", "condition": "unaffected"}
+  ],
+  "outputs": [
+    {"stage": "qc_report", "type": "multiqc", "path": "multiqc_report.html", "checksum": "sha256:66823b02d852c6854d0b0f7a052a7388f38f196decc723c41d5c093b26b6a5a9"}
+  ],
+  "metrics": [],
+  "tools": {
+    "bwa": "0.7.19-r1273",
+    "samtools": "1.24",
+    "bcftools": "1.24",
+    "gatk": "4.6.2.0",
+    "fastqc": "0.12.1",
+    "fastp": "1.3.7",
+    "multiqc": "1.35"
+  }
+}
