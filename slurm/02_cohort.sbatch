@@ -16,7 +16,11 @@ trap 'rm -rf "${TMPDIR}"' EXIT
 
 export THREADS="${SLURM_CPUS_PER_TASK}"
 
-module load miniconda3/25.9.1
-source activate "${CONDA_ENV}"
-
-bash "${PIPELINE_DIR}/run_pipeline.sh" "${SAMPLESHEET}" "${RUN_ROOT}"
+apptainer exec --cleanenv \
+    --env THREADS="${THREADS}" \
+    --env TMPDIR="${TMPDIR}" \
+    --env SLURM_JOB_ID="${SLURM_JOB_ID}" \
+    --env SLURM_CPUS_PER_TASK="${SLURM_CPUS_PER_TASK}" \
+    --bind /courses/BINF6610.202710,/scratch/${USER} \
+    "${SIF}" \
+    bash "${PIPELINE_DIR}/run_pipeline.sh" "${SAMPLESHEET}" "${RUN_ROOT}"
