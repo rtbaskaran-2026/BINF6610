@@ -5,10 +5,10 @@
     "implementation": "nextflow",
     "revision": "none",
     "git_sha": "none",
-    "run_id": "grave_mcnulty",
-    "started_at": "2026-10-08T12:50:10.011420166-04:00",
+    "run_id": "romantic_kowalevski",
+    "started_at": "2026-10-08T14:30:00.013649790-04:00",
     "launch_dir": "/home/baskaran.aa/BINF_6610/week2_code/slurm",
-    "finished_at": "2026-10-08T17:38:27Z",
+    "finished_at": "2026-10-08T18:30:54Z",
     "exit_status": "success"
   },
   "params": {
@@ -42,9 +42,9 @@
     {"sample_id": "NA12873", "library_type": "paired", "condition": "unaffected"}
   ],
   "outputs": [
-    {"path": "cohort.filtered.vcf.gz", "checksum": "sha256:68521da0cb3814f8fa36263e413f1764d83986c4f10daef90ceef5252dc87a97"},
+    {"path": "cohort.filtered.vcf.gz", "checksum": "sha256:39f7a1a8d5324141af5a54cbb7268214c9768f100c6249a160862bc6c8f70832"},
     {"path": "multiqc_report.html", "checksum": "sha256:51eafb6b04503f8ea77708f6cc523306c58328f28a0151279150d48494c3aaed"},
     {"path": "samples.tsv", "checksum": "sha256:0aca79e22a2e172db689f8b6220dd030173f1615dfbdb35496d1bc195a5975eb"},
-    {"path": "variants.tsv", "checksum": "sha256:6323b7b3f15449bf98c23df1928805f1e26f80d48a98977318ab5712df364298"}
+    {"path": "variants.tsv", "checksum": "sha256:b60959da73d40aefd5e27accff69856d1a7fc9027cd9d968077055602130a270"}
   ]
 }

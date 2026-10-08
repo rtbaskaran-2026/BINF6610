@@ -22,7 +22,7 @@ process FILTER {
         --filter-expression "QD < 2.0 || QUAL < 30.0 || SOR > 3.0 || FS > 60.0 || MQ < 40.0 || MQRankSum < -12.5 || ReadPosRankSum < -8.0" \\
         --filter-name "GATK_Standard_SNP_Filter"
 
-    printf 'CHROM\\tPOS\\tREF\\tALT\\tFILTER\\n' > variants.tsv
-    bcftools query -f '%CHROM\\t%POS\\t%REF\\t%ALT\\t%FILTER\\n' cohort.filtered.vcf.gz >> variants.tsv
+    printf 'chrom\\tpos\\tref\\talt\\tqual\\tfilter\\n' > variants.tsv
+    bcftools query -f '%CHROM\\t%POS\\t%REF\\t%ALT\\t%QUAL\\t%FILTER\\n' cohort.filtered.vcf.gz >> variants.tsv    
     """
 }

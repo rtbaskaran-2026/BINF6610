@@ -1,0 +1,46 @@
+task_id	name	status	exit	container	native_id	realtime	%cpu	peak_rss
+1	VALIDATE	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img	10921339	42.4s	90.3%	8.4 MB
+2	FASTQC (NA12878)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921577	33s	83.1%	589.3 MB
+3	FASTQC (NA12891)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921574	28s	90.1%	554.5 MB
+5	FASTP (NA12878)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921553	27.5s	88.8%	1.1 GB
+4	FASTQC (NA12892)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921582	19s	82.2%	428.8 MB
+6	FASTP (NA12891)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921552	27.9s	88.1%	1.1 GB
+12	BWA_MEM (NA12891)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921600	13m 24s	96.0%	6.3 GB
+13	MARKDUPLICATES (NA12891)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921829	51.8s	94.5%	13.1 GB
+7	FASTP (NA12892)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921554	31.9s	93.8%	1.3 GB
+11	FASTP (NA12003)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921556	30.1s	92.7%	1.3 GB
+15	BWA_MEM (NA12892)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921602	5m 58s	95.1%	5.8 GB
+9	BWA_MEM (NA12878)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921597	10m 7s	98.2%	6.3 GB
+14	FASTP (NA10851)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921559	27.7s	88.6%	1.1 GB
+17	FASTP (NA12813)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921560	43.4s	91.2%	1.1 GB
+10	FASTP (NA07357)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921555	25.4s	88.5%	1.1 GB
+23	MARKDUPLICATES (NA12878)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921802	59.8s	90.4%	13.4 GB
+16	HAPLOTYPECALLER (NA12891)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921845	6m 56s	97.0%	1 GB
+20	FASTQC (NA12003)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921584	19s	86.1%	424.2 MB
+26	HAPLOTYPECALLER (NA12878)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921812	6m 1s	97.5%	1021.5 MB
+18	BWA_MEM (NA12003)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921606	7m 7s	95.7%	5.9 GB
+8	FASTQC (NA07357)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921580	32s	86.3%	564.8 MB
+28	MARKDUPLICATES (NA12003)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921798	40.8s	86.0%	10.8 GB
+21	FASTQC (NA10851)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921587	31s	86.5%	588 MB
+31	HAPLOTYPECALLER (NA12003)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921807	4m 29s	97.1%	877.2 MB
+24	FASTP (NA12873)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10921561	32.7s	88.7%	1.1 GB
+30	FASTQC (NA12873)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921588	36s	85.4%	599 MB
+25	BWA_MEM (NA12813)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921607	23m 14s	96.5%	7 GB
+19	MARKDUPLICATES (NA12892)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921799	38.4s	86.4%	10.9 GB
+33	MARKDUPLICATES (NA12813)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10922212	1m 19s	90.5%	13.5 GB
+22	BWA_MEM (NA10851)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921605	13m 53s	96.8%	6.3 GB
+27	FASTQC (NA12813)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10921585	46s	89.7%	610.1 MB
+37	MULTIQC	CACHED	0	/scratch/baskaran.aa/apptainer-cache/quay.io-biocontainers-multiqc-1.35--pyhdfd78af_2.img	10921641	25s	15.1%	193.9 MB
+29	BWA_MEM (NA07357)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921601	12m 23s	96.3%	6.2 GB
+38	MARKDUPLICATES (NA07357)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921816	50.2s	90.7%	13.3 GB
+34	HAPLOTYPECALLER (NA12892)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921806	4m 30s	97.0%	881.7 MB
+32	BWA_MEM (NA12873)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10921608	17m 35s	97.2%	6.5 GB
+36	MARKDUPLICATES (NA10851)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921839	57s	88.9%	13.4 GB
+40	MARKDUPLICATES (NA12873)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921880	57.3s	94.6%	13.4 GB
+35	HAPLOTYPECALLER (NA12813)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10922237	9m 19s	97.9%	910.9 MB
+41	HAPLOTYPECALLER (NA10851)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921853	5m 58s	97.6%	1006.4 MB
+39	HAPLOTYPECALLER (NA07357)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921834	6m	96.7%	1 GB
+42	HAPLOTYPECALLER (NA12873)	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10921910	7m 28s	97.5%	1000.3 MB
+43	JOINT_GENOTYPE	CACHED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10922420	6m 40s	96.3%	861.6 MB
+44	FILTER	COMPLETED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10923295	9.9s	83.4%	712.5 MB
+45	PUBLISH	COMPLETED	0	/scratch/baskaran.aa/apptainer-cache/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img	10923305	3.3s	3.3%	6.6 MB

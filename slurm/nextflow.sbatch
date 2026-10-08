@@ -9,6 +9,10 @@
 
 module load nextflow/25.04.6
 
+export APPTAINER_CACHEDIR=/scratch/${USER}/apptainer-cache
+export NXF_APPTAINER_CACHEDIR=/scratch/${USER}/apptainer-cache
+mkdir -p "${APPTAINER_CACHEDIR}"
+
 nextflow run ../main.nf -profile explorer -resume \
     --samplesheet /courses/BINF6610.202710/data/samplesheet-variant8.csv \
     --ref /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa \
