@@ -11,6 +11,11 @@ logs/
 # Downloaded test harnesses — not part of the submission itself
 w02-assignment-tests/
 w03-assignment-tests/
+w04-assignment-tests/
 
 # Leftover build job log, if any land in containers/
 containers/*.out
+
+work/
+.nextflow/
+.nextflow.log*

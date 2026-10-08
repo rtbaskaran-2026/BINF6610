@@ -1,0 +1,21 @@
+task_id	name	status	exit	container	native_id	realtime	%cpu	peak_rss
+1	VALIDATE	CACHED	0	community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc	22980	1s	95.5%	13 MB
+4	FASTQC (smoke_02)	CACHED	0	quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0	23028	21s	112.7%	350 MB
+2	FASTQC (smoke_01)	CACHED	0	quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0	23043	20s	105.9%	316.6 MB
+5	FASTQC (smoke_03)	CACHED	0	quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0	23058	8s	115.7%	235.2 MB
+3	FASTP (smoke_01)	CACHED	0	community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494	23137	6.1s	135.5%	1.1 GB
+6	FASTP (smoke_02)	CACHED	0	community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494	23110	6.5s	135.6%	1.1 GB
+7	FASTP (smoke_03)	CACHED	0	community.wave.seqera.io/library/fastp:1.3.7--075357a9d5c82494	23034	9.4s	98.7%	1.1 GB
+11	MULTIQC	CACHED	0	quay.io/biocontainers/multiqc:1.35--pyhdfd78af_2	23286	9.9s	85.3%	315.6 MB
+8	BWA_MEM (smoke_01)	CACHED	0	community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3	23191	21.5s	107.0%	206.1 MB
+10	BWA_MEM (smoke_02)	CACHED	0	community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3	23266	24.9s	107.0%	173 MB
+9	BWA_MEM (smoke_03)	CACHED	0	community.wave.seqera.io/library/bwa_samtools:22527ddb3cc80fb3	23184	5.6s	100.5%	57.6 MB
+13	MARKDUPLICATES (smoke_02)	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23460	16.6s	152.0%	651.3 MB
+12	MARKDUPLICATES (smoke_01)	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23428	19.3s	174.7%	711.1 MB
+14	MARKDUPLICATES (smoke_03)	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23342	11.5s	164.3%	569.4 MB
+15	HAPLOTYPECALLER (smoke_02)	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23529	51.6s	167.7%	614 MB
+16	HAPLOTYPECALLER (smoke_01)	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23494	53.5s	165.7%	578.6 MB
+17	HAPLOTYPECALLER (smoke_03)	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23394	52.7s	177.4%	572.6 MB
+18	JOINT_GENOTYPE	CACHED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23599	3m 39s	175.3%	538.5 MB
+19	FILTER	COMPLETED	0	community.wave.seqera.io/library/gatk4_samtools_bcftools:1adede7d418fb46b	23765	5.8s	196.6%	424.9 MB
+20	PUBLISH	COMPLETED	0	community.wave.seqera.io/library/coreutils_gawk_gzip:7c58ccc2f9ca6bcc	23809	620ms	113.3%	6.5 MB
