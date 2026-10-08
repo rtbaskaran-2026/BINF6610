@@ -1,3 +1,5 @@
+nextflow.preview.output = true
+
 // variant-call, your DNA pipeline: the ten stages of weeks 1-3 as Nextflow processes.
 include { VALIDATE }         from './modules/validate'
 include { FASTQC }           from './modules/fastqc'

@@ -10,7 +10,7 @@ process VALIDATE {
     path ref_dict
 
     output:
-    path 'samplesheet.csv', emit: sheet
+    path "${samplesheet}", emit: sheet
 
     script:
     """

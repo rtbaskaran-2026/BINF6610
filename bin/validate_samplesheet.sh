@@ -11,8 +11,18 @@ problems=0
 [[ -s "$REF" ]]       || { echo "no reference at ${REF}" >&2; (( ++problems )); }
 [[ -s "$REF_INDEX" ]] || { echo "no .fai index at ${REF_INDEX}" >&2; (( ++problems )); }
 
-while IFS=, read -r id cond rep lib_type r1 r2; do
-    [[ "$id" == "sample_id" ]] && continue   # skip header
+header=$(head -1 "$SHEET")
+IFS=, read -r -a cols <<< "$header"
+declare -A col_idx
+for i in "${!cols[@]}"; do col_idx["${cols[$i]}"]=$i; done
+
+while IFS=, read -r -a fields; do
+    [[ "${fields[0]}" == "sample_id" ]] && continue
+
+    id="${fields[${col_idx[sample_id]}]}"
+    lib_type="${fields[${col_idx[library_type]}]}"
+    r1="${fields[${col_idx[r1_fastq]}]}"
+    r2="${fields[${col_idx[r2_fastq]}]}"
 
     r1_name=$(basename "$r1")
     r2_name=""
