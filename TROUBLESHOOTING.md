@@ -107,4 +107,36 @@ the explorer profile in nextflow.config, submitted a fresh run
 10948362 nf-HAPLOT+ FAILED 00:01:19 00:02:00 12:0
 Process `HAPLOTYPECALLER (NA12003)` terminated with an error exit status (140)
 
+# Week 5
+
+### Breakage 1: Ctrl-C mid-run, then rerun
+IncompleteFilesException:
+The files below seem to be incomplete. If you are sure that certain files are not incomplete, mark them as complete with
+
+    snakemake --cleanup-metadata <filenames>
+
+To re-generate the files rerun your command with the --rerun-incomplete flag.
+Incomplete files:
+work/fastqc/smoke_03
+
+20 jobs ran with the rerun
+
+
+### Breakage 2: log: without {sample} on bwa_mem
+Error: 
+Config file config.yaml is extended by additional config specified via the command line.
+RuleException in file "/Users/aarthee/Desktop/Northeastern_Coursework/Fall_2026/BINF_6610/Assignments/Week5/week5_code/Snakefile", line 147:
+Not all output, log and benchmark files of rule bwa_mem contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
+
+Why: 
+Changing this line meant that all sample's log files would be written to the same path/spot. Snakemake refuses this and causes an error.
+
+
+### Breakage 3: wildcard_constraints removed from both trim rules
+
+`AmbiguousRuleException`
+
+Rules fastp_single and fastp_paired are ambiguous for the file
+work/trim/smoke_01_R1.trim.fastq.gz.
+
 
