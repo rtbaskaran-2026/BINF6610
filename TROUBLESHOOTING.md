@@ -138,3 +138,12 @@ Rules fastp_single and fastp_paired are ambiguous for the file
 work/trim/smoke_01_R1.trim.fastq.gz.
 
 
+### Breakage 4: software-deployment-method: apptainer removed
+per sample rules failed - `fastqc`, `fastp_paired`, `fastp_single`
+
+Singularity containers: ignored
+...
+CalledProcessError: Command ‘... fastqc -q -t 4 ...’ returned
+non-zero exit status 127.
+
+/usr/bin/bash: line 1: fastqc: command not found

@@ -5,10 +5,10 @@
     "implementation": "snakemake",
     "revision": "none",
     "git_sha": "none",
-    "run_id": "snakemake-20261015T214324",
-    "started_at": "2026-10-15T21:43:24.397098-04:00",
+    "run_id": "snakemake-20261016T000743",
+    "started_at": "2026-10-16T00:07:43.772703-04:00",
     "launch_dir": "/home/baskaran.aa/BINF_6610/week2_code",
-    "finished_at": "2026-10-16T02:10:56Z",
+    "finished_at": "2026-10-16T04:32:15Z",
     "exit_status": "success"
   },
   "params": {
@@ -43,9 +43,9 @@
     {"sample_id": "NA12873", "library_type": "paired", "condition": "unaffected"}
   ],
   "outputs": [
-    {"path": "cohort.filtered.vcf.gz", "checksum": "sha256:7459ec79be67a6eca2627853baa01df24016aa48acf9d9092e1eea70bdbb4a1a"},
-    {"path": "cohort.filtered.vcf.gz.tbi", "checksum": "sha256:1daf2fe29a98d5b8b0862d9a6772e44f902f1ea23fdcfa4c2a20bb247ee3f1d8"},
-    {"path": "multiqc_report.html", "checksum": "sha256:6bbac02100d04a8925e75ab94faa14b4487806d351070ea7a7d0ec95733d78ab"},
+    {"path": "cohort.filtered.vcf.gz", "checksum": "sha256:5924901aa9dba3e00e7679d3750a891491a9e7f223ccffe4f77e382033f7a7c7"},
+    {"path": "cohort.filtered.vcf.gz.tbi", "checksum": "sha256:156a6475fb865761ae0fe02aa733f655953a0a97d3514208bc8bb8bd4f211e5a"},
+    {"path": "multiqc_report.html", "checksum": "sha256:3edf8c21ef4cc1a55e7f755af7710be4583c2e79c269b28316864cd19d50f9b2"},
     {"path": "samples.tsv", "checksum": "sha256:0aca79e22a2e172db689f8b6220dd030173f1615dfbdb35496d1bc195a5975eb"},
     {"path": "variants.tsv", "checksum": "sha256:06f0592e288a5513ad880b03e0cd04ce2826f0a400b800ac2626d9240081ee9b"}
   ]
