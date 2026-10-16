@@ -6,6 +6,8 @@ REF="$2"
 REF_INDEX="$3"
 REF_DICT="$4"
 
+SHEET_DIR=$(dirname "$SHEET")
+
 problems=0
 
 [[ -s "$REF" ]]       || { echo "no reference at ${REF}" >&2; (( ++problems )); }
@@ -16,29 +18,33 @@ IFS=, read -r -a cols <<< "$header"
 declare -A col_idx
 for i in "${!cols[@]}"; do col_idx["${cols[$i]}"]=$i; done
 
+resolve() {
+    local p="$1"
+    [[ "$p" = /* ]] && echo "$p" || echo "${SHEET_DIR}/${p}"
+}
+
 while IFS=, read -r -a fields; do
     [[ "${fields[0]}" == "sample_id" ]] && continue
 
     id="${fields[${col_idx[sample_id]}]}"
     lib_type="${fields[${col_idx[library_type]}]}"
-    r1="${fields[${col_idx[r1_fastq]}]}"
-    r2="${fields[${col_idx[r2_fastq]}]}"
-
-    r1_name=$(basename "$r1")
-    r2_name=""
-    [[ -n "$r2" ]] && r2_name=$(basename "$r2")
-
-    [[ -s "$r1_name" ]] || { echo "$id: R1 missing or empty: $r1_name" >&2; (( ++problems )); }
-
-    if [[ "$lib_type" == paired && -n "$r2_name" ]]; then
-        [[ -s "$r2_name" ]] || { echo "$id: paired but R2 missing: $r2_name" >&2; (( ++problems )); }
+    r1=$(resolve "${fields[${col_idx[r1_fastq]}]}")
+    r2=""
+    if [[ "$lib_type" == paired ]]; then
+        r2=$(resolve "${fields[${col_idx[r2_fastq]}]:-}")
     fi
 
-    if [[ -s "$r1_name" ]]; then
-        gzip -t "$r1_name" 2>/dev/null || { echo "$id: R1 is not a valid gzip file: $r1_name" >&2; (( ++problems )); }
+    [[ -s "$r1" ]] || { echo "$id: R1 missing or empty: $r1" >&2; (( ++problems )); }
+
+    if [[ "$lib_type" == paired && -n "$r2" ]]; then
+        [[ -s "$r2" ]] || { echo "$id: paired but R2 missing: $r2" >&2; (( ++problems )); }
     fi
-    if [[ "$lib_type" == paired && -n "$r2_name" && -s "$r2_name" ]]; then
-        gzip -t "$r2_name" 2>/dev/null || { echo "$id: R2 is not a valid gzip file: $r2_name" >&2; (( ++problems )); }
+
+    if [[ -s "$r1" ]]; then
+        gzip -t "$r1" 2>/dev/null || { echo "$id: R1 is not a valid gzip file: $r1" >&2; (( ++problems )); }
+    fi
+    if [[ "$lib_type" == paired && -n "$r2" && -s "$r2" ]]; then
+        gzip -t "$r2" 2>/dev/null || { echo "$id: R2 is not a valid gzip file: $r2" >&2; (( ++problems )); }
     fi
 done < "$SHEET"
 

@@ -1,0 +1,40 @@
+{
+  "pipeline": {
+    "name": "variant-call",
+    "version": "1.0.0",
+    "implementation": "snakemake",
+    "revision": "none",
+    "git_sha": "none",
+    "run_id": "snakemake-20261015T211703",
+    "started_at": "2026-10-15T21:17:03.517173-04:00",
+    "launch_dir": "/Users/aarthee/Desktop/Northeastern_Coursework/Fall_2026/BINF_6610/Assignments/Week5/week5_code",
+    "finished_at": "2026-10-16T01:17:03Z",
+    "exit_status": "success"
+  },
+  "params": {
+    "platform": "laptop",
+    "executor": "local",
+    "samplesheet": "/Users/aarthee/smoke/samplesheet.csv",
+    "ref": "/Users/aarthee/smoke/smoke.fa",
+    "region": "smoke_1mb",
+    "outdir": "results"
+  },
+  "platform": {
+    "kind": "laptop",
+    "executor": "local",
+    "engine": "snakemake 9.27.0",
+    "containers": {}
+  },
+  "samples": [
+    {"sample_id": "smoke_01", "library_type": "paired", "condition": "unaffected"},
+    {"sample_id": "smoke_02", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "smoke_03", "library_type": "single", "condition": "affected"}
+  ],
+  "outputs": [
+    {"path": "cohort.filtered.vcf.gz", "checksum": "sha256:6e1c5a802e1a8e28d60d98abb5be096d3c22f71c9c7482b4d5d2c024543ba619"},
+    {"path": "cohort.filtered.vcf.gz.tbi", "checksum": "sha256:6b6dd94d8908d9ccd9f3b09cede82dfaa76dc96b0d25c8179e450f7a5c543ca0"},
+    {"path": "multiqc_report.html", "checksum": "sha256:61abba4b2143d7bc2e87ce4ab42136949e6f8ba69123f8b707af58289350d928"},
+    {"path": "samples.tsv", "checksum": "sha256:d534edf8132cce4c541af0eea6cc345b17613e1b4a7a5286742aa8d16395257c"},
+    {"path": "variants.tsv", "checksum": "sha256:f67279d48a8b04e727c3c0518e8a5b56fd4562bf1a08e86f7f90301715ed5338"}
+  ]
+}

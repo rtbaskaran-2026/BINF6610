@@ -19,3 +19,9 @@ containers/*.out
 work/
 .nextflow/
 .nextflow.log*
+
+.snakemake/
+work/
+logs/
+results/
+slurm/*.out
