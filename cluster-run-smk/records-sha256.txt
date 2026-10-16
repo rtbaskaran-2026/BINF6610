@@ -1,0 +1,7 @@
+4aa65aeb6103f64589129d60a0f5d57243c6e9613b7a525e4b2ef36e3c3e8f1a  -
+6fcf74e350566e2899e5b1aec23626c6a89e96e588b993ae237b0ed788643dfe  -
+
+They differ because this run used the Snakemake implementation (same
+tools, same pinned container versions as week 4) rather than the
+Nextflow/Apptainer pipeline from last week. 
+Variant counts confirmed identical: 36853 records in both VCFs (bcftools view -H ... | wc -l).
