@@ -22,5 +22,6 @@ USER $MAMBA_USER
 # new: the pipeline, and the script the job runs
 COPY --chown=$MAMBA_USER:$MAMBA_USER . /pipeline/
 COPY --chown=$MAMBA_USER:$MAMBA_USER aws/batch_run.sh /usr/local/bin/batch_run.sh
+RUN chmod +x /usr/local/bin/batch_run.sh /pipeline/run_pipeline.sh /pipeline/bin/*.sh
 
 ENTRYPOINT ["/usr/local/bin/batch_run.sh"]
