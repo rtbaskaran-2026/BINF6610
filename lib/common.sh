@@ -30,7 +30,7 @@ die() {
 
 # Temporary files go on the node's own local disk, not shared storage.
 # $SLURM_TMPDIR is unset on Explorer, so name ours after the job id.
-export TMPDIR="/tmp/${SLURM_JOB_ID}"
+export TMPDIR="/tmp/${SLURM_JOB_ID:-$$}"
 mkdir -p "${TMPDIR}"
 trap 'rm -rf "${TMPDIR}"' EXIT
 
