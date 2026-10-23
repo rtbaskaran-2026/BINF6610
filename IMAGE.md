@@ -17,3 +17,7 @@ and bioconda may resolve slightly different dependency versions on a
 future rebuild even with the same pins, so a rebuild is not guaranteed
 to be byte-identical to this one. The "Versions pinned" heading above
 is what to match against if verifying a future rebuild.
+
+## Pushed to ECR
+
+411902101541.dkr.ecr.us-east-2.amazonaws.com/variant-call@sha256:30b6b223442de3f5743446fe08987c4e1c8fc061f41978de67a0ae05d124;5Deb94

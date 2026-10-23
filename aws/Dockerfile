@@ -14,8 +14,10 @@ RUN micromamba install -y -n base -c bioconda -c conda-forge \
 ENV PATH=/opt/conda/bin:$PATH
 
 # new: the AWS CLI, copied from AWS's own image
+USER root
 COPY --from=amazon/aws-cli:2.22.0 /usr/local/aws-cli/ /usr/local/aws-cli/
 RUN ln -s /usr/local/aws-cli/v2/current/bin/aws /usr/local/bin/aws
+USER $MAMBA_USER
 
 # new: the pipeline, and the script the job runs
 COPY --chown=$MAMBA_USER:$MAMBA_USER . /pipeline/
