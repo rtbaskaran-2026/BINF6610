@@ -20,4 +20,4 @@ is what to match against if verifying a future rebuild.
 
 ## Pushed to ECR
 
-411902101541.dkr.ecr.us-east-2.amazonaws.com/variant-call@sha256:a5ac8c48e9881683293e97010eb659c1047d77d08996119a6ba33ee4473ba7c9
+411902101541.dkr.ecr.us-east-2.amazonaws.com/variant-call@sha256:e432987e3376697e3ec2b19672c20e43b4f1b18e71928099cce5101db6082164
