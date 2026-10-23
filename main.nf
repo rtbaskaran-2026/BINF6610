@@ -17,7 +17,7 @@ workflow {
     ref       = file(params.ref)
     ref_index = file("${params.ref}.fai")
     bwa_index = files("${params.ref}.{amb,ann,bwt,pac,sa}")
-    ref_dict  = file(params.ref.replaceAll(/\.fa(sta)?$/, '.dict'))
+    ref_dict  = ref.resolveSibling("${ref.baseName}.dict")
     sheet     = file(params.samplesheet)
 
     // One item per sample: [meta, reads], with meta = [id: ..., single_end: ...].
