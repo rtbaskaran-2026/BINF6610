@@ -6,7 +6,6 @@ REGION=${REGION:-chr20:1-10000000}
 REF_DIR=${REF_DIR:-/courses/BINF6610.202710/data/refs/grch38}
 INDEX=${INDEX:-${REF_DIR}/hisat2/genome}
 GTF=${GTF:-${REF_DIR}/annotation.gtf}
-FASTQ_ROOT=${FASTQ_ROOT:-/courses/BINF6610.202710/data}
 CONDITION_REF=${CONDITION_REF:-Healthy}
 THREADS=${THREADS:-4}
 SORT_THREADS=${SORT_THREADS:-2}
@@ -36,7 +35,8 @@ trap 'rm -rf "${TMPDIR}"' EXIT
 
 rows() {
     local sheet=$1 only=${2:-}
-    awk -F, -v want="$only" -v root="$FASTQ_ROOT" '
+    local root=${FASTQ_ROOT:-$(dirname "$sheet")}
+    awk -F, -v want="$only" -v root="$root" '
         BEGIN { n = split("sample_id condition replicate library_type r1_fastq r2_fastq", need, " ") }
         NR == 1 {
             for (i = 1; i <= NF; i++) col[$i] = i
