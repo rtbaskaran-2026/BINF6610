@@ -1,4 +1,6 @@
 stage_publish() {
+    cp "${VCF}/cohort.filtered.vcf.gz" "${VCF}/cohort.filtered.vcf.gz.tbi" "${RES}/"
+
     PIPELINE_NAME=dna-variant-call \
         bash "${PIPE_DIR}/lib/write_manifest.sh" "${RES}" "${SHEET}" "${REF}" "${REGION}"
 
