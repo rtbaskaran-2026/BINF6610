@@ -1,0 +1,44 @@
+{
+  "pipeline": {
+    "name": "dna-variant-call",
+    "version": "1.0.0",
+    "implementation": "bash",
+    "git_sha": "59b1ac632225b829040bde5d8e054de44ac923b9",
+    "run_id": "2026-11-07T01:21:25Z-59b1ac6",
+    "started_at": "2026-11-07T01:21:25Z",
+    "finished_at": "2026-11-07T01:21:25Z",
+    "exit_status": "success"
+  },
+  "platform": {
+    "kind": "laptop",
+    "region": "smoke_1mb",
+    "host": "ip-172-31-0-76.us-east-2.compute.internal",
+    "slurm_job_id": "none",
+    "slurm_cpus": "none",
+    "container": "none",
+    "batch_job_id": "b0708553-bcd2-4d82-8c06-ca0d9d919bfd",
+    "batch_queue": "binf6610-queue",
+    "batch_compute_environment": "binf6610-fargate"
+  },
+  "reference": {"genome": "/tmp/run.oVwDpL/data/smoke.fa"},
+  "samples": [
+    {"sample_id": "smoke_01", "library_type": "paired", "condition": "unaffected"},
+    {"sample_id": "smoke_02", "library_type": "paired", "condition": "affected"},
+    {"sample_id": "smoke_03", "library_type": "single", "condition": "affected"}
+  ],
+  "outputs": [
+    {"stage": "analyze", "type": "vcf", "path": "cohort.filtered.vcf.gz", "checksum": "sha256:7f007acfd9c6102012abfabd0cf2af90542024bffd6f53902658b8c209363d63"},
+    {"stage": "analyze", "type": "vcf_index", "path": "cohort.filtered.vcf.gz.tbi", "checksum": "sha256:b37e73e785c8e3f8e8ba0226573711d9b065bb4cf498d4663f9eacf6b53f94ef"},
+    {"stage": "qc_report", "type": "multiqc", "path": "multiqc_report.html", "checksum": "sha256:34a822a5aca9a2dff0e79cd4a9379edbabd052d180a72564812a93007263670a"}
+  ],
+  "metrics": [],
+  "tools": {
+    "bwa": "0.7.19-r1273",
+    "samtools": "1.24",
+    "bcftools": "1.24",
+    "gatk": "4.6.2.0",
+    "fastqc": "0.12.1",
+    "fastp": "1.3.7",
+    "multiqc": "1.35"
+  }
+}
