@@ -1,4 +1,4 @@
-CHROM	POS	REF	ALT	FILTER
+chrom	pos	ref	alt	filter
 smoke_1mb	170	G	GC	PASS
 smoke_1mb	446	G	A	PASS
 smoke_1mb	532	G	C	PASS
